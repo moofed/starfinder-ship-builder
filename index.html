@@ -32,11 +32,6 @@
 	<link rel="icon" type="image/png" href="img/favicon-32x32.png" sizes="32x32" />
 	<link rel="icon" type="image/png" href="img/favicon-16x16.png" sizes="16x16" />
 	<link rel="shortcut icon" type="image/ico" href="img/favicon.ico">
-	
-	<!-- Google Analytics -->
-	<script>
-		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-47769832-1', 'auto');ga('send', 'pageview');
-	</script>
 </head>
 
 <body>
@@ -116,6 +111,7 @@
 						<li><a href="#shields">Shields</a></li>
 						<li><a href="#weapons">Weapons</a></li>
 					</ul>
+					<li><a href="#custom-components">Custom Components</a></li>
 					<li><a href="#crew">Crew</a></li>
 					<li><a href="#output">Output</a></li>
 				</ul>
@@ -194,9 +190,39 @@
 				
 			</header>
 
-            <div class="app-message">
-                <strong>Recent updates 2018/05/19</strong>: Custom frames; <strong>2018/05/12</strong>: New ships and rules from <em>Pact Worlds</em>
-            </div>
+			<!--
+			|------------------------------------------------------------
+			|	RECENT UPDATES
+			|------------------------------------------------------------
+			-->
+			<div class="box">
+				<p><strong>Recent Updates:</strong> Added chief mate and magic officer crew roles from Character Operations Manual (11/23/2019); Fixed incorrect costs for Data Net; added custom components; BP and PCU breakdown in output (<time datetime="2019-11-12">11/12/2019</time>)</p>
+			</div>
+
+			<!--
+			|------------------------------------------------------------
+			|	PATREON
+			|------------------------------------------------------------
+			-->
+			
+			<div class="box">
+				<p>Huge thanks to Patreon supporters:
+					Anish Hermon,
+					Geoff Sears,
+					Michael Ross,
+					Noble Hays,
+					Robert Trimarco,
+					Shaun Wolf,
+					Toby Dillon,
+					William Refsland.</p>
+
+	            <div class="app-message" style="text-align: left;">
+	            	Want to support this site?
+	            	<a href="https://www.patreon.com/user?u=15502682" target="_blank">
+	            		<img height="auto" width="150" style="margin-bottom: -12px;" src="img/become_a_patron_button.png" alt="Become a patron">
+	            	</a>
+	            </div>
+			</div>
 
 
 			
@@ -206,9 +232,9 @@
 			
 			
 			<!--
-			
+			|------------------------------------------------------------
 				INPUT
-				
+			|------------------------------------------------------------
 			-->
 			
 			<div class="box">
@@ -225,6 +251,20 @@
 						</select>
 					</div>
 				</div>
+
+				<!-- <div class="box__select">
+					<div class="form-group">
+						<form class=""
+							action="./starshipSheet.php" 
+							method="post"
+							target="_blank">
+								<input type="hidden" :value="jsonParams" name="json">
+								<button type="submit" class="btn btn-lg btn-primary">
+									Open Character Sheet
+								</button>
+						</form>
+					</div>
+				</div> -->
 				
 				<div class="box__select">
 					<div class="form-group">
@@ -252,9 +292,9 @@
 			
 			
 			<!--
-			
+			|------------------------------------------------------------
 				CONCEPT
-				
+			|------------------------------------------------------------
 			-->
 			
 			<div class="box">
@@ -293,9 +333,9 @@
 			
 			
 			<!--
-			
+			|------------------------------------------------------------
 				TIER
-				
+			|------------------------------------------------------------
 			-->
 			
 			<div class="box">
@@ -325,9 +365,9 @@
 			
 			
 			<!--
-			
+			|------------------------------------------------------------
 				FRAME
-				
+			|------------------------------------------------------------
 			-->
 			
 			<div class="box">
@@ -365,9 +405,9 @@
 			
 			
 			<!--
-			
+			|------------------------------------------------------------
 				CUSTOM FRAME
-				
+			|------------------------------------------------------------
 			-->
 			
 			<div class="box" v-if="this.params.frameId == 'custom'">
@@ -387,7 +427,7 @@
 		                            <select name="customFrameBase"
 		                                id="customFrameBase"
 		                                class="form-control"
-		                                v-model="customFrameBaseId">
+		                                v-model="params.customFrameBaseId">
 		                                <option v-for="option in selectOptions.frame" v-if="option.id != 'custom'" :value="option.id">{{ option.name }}</option>
 		                            </select>
 		                        </div>
@@ -569,9 +609,9 @@
 			
 			
 			<!--
-			
+			|------------------------------------------------------------
 				POWER CORE
-				
+			|------------------------------------------------------------
 			-->
 			
 			<div class="box">
@@ -643,9 +683,9 @@
 			
 			
 			<!--
-			
+			|------------------------------------------------------------
 				OTHER SYSTEMS / ARMOUR
-				
+			|------------------------------------------------------------
 			-->
 			
 			<h2 id="otherSystems">Step 5: Other Systems</h2>
@@ -679,9 +719,9 @@
 			
 			
 			<!--
-			
+			|------------------------------------------------------------
 				COMPUTER
-				
+			|------------------------------------------------------------
 			-->
 			
 			<div class="box">
@@ -715,9 +755,9 @@
 			
 			
 			<!--
-			
+			|------------------------------------------------------------
 				CREW QUARTERS
-				
+			|------------------------------------------------------------
 			-->
 			
 			<div class="box">
@@ -749,9 +789,9 @@
 			
 			
 			<!--
-			
+			|------------------------------------------------------------
 				DEFENSIVE COUNTERMEASURES
-				
+			|------------------------------------------------------------
 			-->
 			
 			<div class="box">
@@ -783,9 +823,9 @@
 			
 			
 			<!--
-			
+			|------------------------------------------------------------
 				DRIFT ENGINE
-				
+			|------------------------------------------------------------
 			-->
 			
 			<div class="box">
@@ -819,9 +859,9 @@
 			
 			
 			<!--
-			
+			|------------------------------------------------------------
 				EXPANSION BAYS
-				
+			|------------------------------------------------------------
 			-->
 			
 			<div class="box" v-if="frame.expansionBays > 0">
@@ -870,9 +910,9 @@
 			
 			
 			<!--
-			
+			|------------------------------------------------------------
 				SECURITY
-				
+			|------------------------------------------------------------
 			-->
 			
 			<div class="box">
@@ -1009,9 +1049,9 @@
 			
 			
 			<!--
-			
+			|------------------------------------------------------------
 				SENSORS
-				
+			|------------------------------------------------------------
 			-->
 			
 			<div class="box">
@@ -1043,9 +1083,9 @@
 			
 			
 			<!--
-			
+			|------------------------------------------------------------
 				SHIELDS
-				
+			|------------------------------------------------------------
 			-->
 			
 			<div class="box">
@@ -1110,7 +1150,7 @@
 			
 			<div class="box">
 				<header class="box__header">
-					<h3 id="sensors">Data Net</h3>
+					<h3 id="data-net">Data Net</h3>
 				</header>
                 <div class="box__select">
                     <div class="checkbox">
@@ -1141,7 +1181,7 @@
 			
 			<div class="box">
 				<header class="box__header">
-					<h3 id="sensors">Hive Joining</h3>
+					<h3 id="hive-joining">Hive Joining</h3>
 				</header>
                 <div class="box__select">
                     <div class="checkbox">
@@ -1292,6 +1332,101 @@
 					mounts {{ weaponsTotalCosts.weaponMountsBp }} +
 					links {{ weaponsTotalCosts.weaponLinksBp }})
 				</div>
+			</div>
+
+
+			
+			
+			
+			
+			
+			
+			<!--
+			
+				CUSTOM COMPONENTS
+				
+			-->
+			
+			<div class="box">
+				<header class="box__header">
+					<h2 id="custom-components">Step 5a: Custom Components</h2>
+				</header>
+
+				<template v-for="customComponent, index in params.customComponents">
+
+					<!-- delete button -->
+					<div class="box__header--btns">
+						<h4>{{ customComponent.name ? customComponent.name : "New Custom Component" }}</h4>
+						<div>
+							<button class="btn btn-danger btn-sm"
+								@click="removeCustomComponent(index)">
+								<svg class="icon"><use xlink:href="#icon-trash" /></svg>
+							</button>
+						</div>
+					</div>
+
+					<!-- component name -->
+					<div class="form-group">
+						<label :for="'customComponentName' + index">Component Name</label>
+						<input type="text"
+							:id="'customComponentName' + index"
+							v-model="customComponent.name"
+							class="form-control">
+					</div>
+
+					<!-- notes -->
+					<div class="form-group">
+						<label for="'customComponentNotes' + index">Notes</label>
+						<textarea id="'customComponentNotes' + index"
+							cols="30" rows="2"
+							v-model="customComponent.notes"
+							class="form-control"></textarea>
+					</div>
+
+					<!-- is essential -->
+					<div class="checkbox">
+						<label>
+							<input type="checkbox"
+								:id="'isEssential' + index"
+								v-model="customComponent.isEssential">
+								Is this an essential system?
+						</label>
+					</div>
+
+					<div class="box--flex">
+						<!-- PCU -->
+					    <div class="form-group col-sm-1-1 col-lg-1-2">
+					        <label for="'customComponentPcuCost' + index">PCU Cost</label>
+					        <input type="number"
+					        	:id="'customComponentPcuCost' + index"
+					        	class="form-control"
+					        	v-model="customComponent.pcuCost">
+					    </div>
+
+						<!-- BP -->
+					    <div class="form-group col-sm-1-1 col-lg-1-2">
+					        <label for="'customComponentBpCost' + index">BP Cost</label>
+					        <input type="number"
+					        	:id="'customComponentBpCost' + index"
+					        	class="form-control"
+					        	v-model="customComponent.bpCost">
+					    </div>
+					</div>
+				</template>
+
+				<!-- Totals -->
+
+				<div class="box__cost">
+					<svg class="icon"><use xlink:href="#icon-power" /></svg>
+						{{ parseInt(customComponentPcuTotal.essential) + parseInt(customComponentPcuTotal.nonEssential) }}
+					<svg class="icon"><use xlink:href="#icon-build" /></svg> {{ parseInt(customComponentBpTotal) }}
+				</div>
+
+			</div>
+
+			<div class="box__under-box align-right">
+				<button @click="createCustomComponent()"
+					class="btn btn-primary">Create New Custom Component</button>
 			</div>
 
 
@@ -1474,7 +1609,6 @@
 			<div class="box">
 				<header class="box__header">
 					<h2 id="output">Output</h2>
-					<!-- <button id="copyOutputBtn" class="btn btn-primary" data-clipboard-target="#outputText">Copy summary to clipboard</button> -->
 				</header>
 				<div class="box__info box__info--output">
 					<div id="outputText">
@@ -1501,6 +1635,11 @@
 							<strong>Expansion Bays</strong> {{ expansionBaysDescription }}</span>
 						</p>
 						<p><strong>Modifiers</strong> {{ modifiersDescription }}<span v-if="params.hasCrew">; <strong>Complement</strong> {{ complement }}</span></p>
+						<p><strong>Custom Components</strong> {{ customComponentsDescription }}</p>
+						<p>
+							<strong>Build Points</strong> cost {{ totalBpCost }}, max {{ tier.bpBudget }}
+							<strong>Power Core Units</strong> non-essential {{ totalPcuCost.essential + totalPcuCost.nonEssential }}, essential {{ totalPcuCost.essential }}, max {{ pcuBudget }}
+						</p>
 
 
 						<div v-if="params.hasCrew">
@@ -1559,7 +1698,7 @@
 					<li>
 						Starfinder RPG Ship Builder by <a href="http://www.jamesturneronline.net">James Turner</a> &bull;
 						<a href="https://twitter.com/james_c_turner">@james_c_turner</a>  &bull;
-						Sep 2017
+						Sep 2017 (last updated Nov 2019)
 					</li>
 					<li><a href="http://paizo.com/starfinder/">Starfinder RPG</a> &copy; Paizo Inc, 2017</li>
 					<li>Open Game Licence</li>
@@ -1600,11 +1739,16 @@
 		
 	</div><!-- .wrapper -->
 	
-	<!--
+	<!-- Google Analytics -->
+	<!-- <script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-47769832-1', 'auto');ga('send', 'pageview');
+	</script>
+
+	<script src="vendor/vue/vue.min.js"></script> -->
+	
 	<script src="https://unpkg.com/vue"></script>
-	-->
-	<script src="vendor/vue/vue.min.js"></script>
+	
 	<script src="vendor/clipboard/dist/clipboard.min.js"></script>
-	<script src="js/script.js?v=20180522a"></script>
+	<script src="js/script.js?v=20191123"></script>
 </body>
 </html>
